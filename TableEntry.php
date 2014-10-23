@@ -1,4 +1,5 @@
 <?php
+
 define("MYSQLUSER", "dave1mat");
 define("MYSQLPASS", "dave1mat");
 define("HOSTNAME", "localhost");
