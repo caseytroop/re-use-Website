@@ -63,15 +63,15 @@ function clearMarkers()
 function getData(item)
 {
 	clearMarkers();
-	setMarker(new google.maps.LatLng(47.472173, -94.881648), 'Goodwill');
+	//setMarker(new google.maps.LatLng(47.472173, -94.881648), 'Goodwill');
 	//connect to database and get all stores with item
-	//<?php
-	//	$sql = "SELECT name FROM stores WHERE goods=" . item
-	//	$result = $db->query($sql);
-	//	$row=$result->fetch();
-	//?>
-	//name = <?php $row?>;
-	//setMarker(name);
+	for (int i = 0; i < allMarkers.length; i++)
+	{
+		if (allMarkers[i][7] == item)
+		{
+			setMarker(allMarkers[i][1], allMarkers[i][2], allMarkers[i][0]);
+		}
+	}
 }
 
 function createAllMarkers()
@@ -79,59 +79,73 @@ function createAllMarkers()
 	var allStores = [];
 	var goodwill = [];
 	goodwill.push("Goodwill");
-	goodwill.push("47.472173 -94.881648");
+	goodwill.push("47.472173");
+	goodwill.push("-94.881648");
 	goodwill.push("Address");
 	goodwill.push("Phone");
 	goodwill.push("Email");
 	goodwill.push("goodwill.png");
+	goodwill.push("clothing");
 	allStores.push(goodwill);
 	var tkz = [];
 	tkz.push("Tk'z Closet");
-	tkz.push("47.470792 -94.882243");
+	tkz.push("47.470792");
+	tkz.push("-94.882243");
 	tkz.push("Address");
 	tkz.push("Phone");
 	tkz.push("Email");
 	tkz.push("tkz.png");
+	tkz.push("clothing");
 	allStores.push(tkz);
 	var twice = [];
 	twice.push("Twice but Nice");
-	twice.push("47.471883 -94.881031");
+	twice.push("47.471883");
+	twice.push("-94.881031");
 	twice.push("Address");
 	twice.push("Phone");
 	twice.push("Email");
 	twice.push("twice.png");
+	twice.push("clothing");
 	allStores.push(twice);
 	var mbfc = [];
 	mbfc.push("My Best Friend's Closet");
-	mbfc.push("47.469740 -94.881187");
+	mbfc.push("47.469740");
+	mbfc.push("-94.881187");
 	mbfc.push("Address");
 	mbfc.push("Phone");
 	mbfc.push("Email");
 	mbfc.push("mbfc.png");
+	mbfc.push("clothing");
 	allStores.push(mbfc);
 	var phils = [];
 	phils.push("St. Philip's Clothing Depot");
-	phils.push("47.475237 -94.880512");
+	phils.push("47.475237");
+	phils.push("-94.880512");
 	phils.push("Address");
 	phils.push("Phone");
 	phils.push("Email");
 	phils.push("phils.png");
+	phils.push("clothing");
 	allStores.push(phils);
 	var tnt = [];
 	tnt.push("T-N-T Secondhand");
-	tnt.push("47.483852 -94.927327");
+	tnt.push("47.483852");
+	tnt.push("-94.927327");
 	tnt.push("Address");
 	tnt.push("Phone");
 	tnt.push("Email");
 	tnt.push("tnt.png");
+	tnt.push("clothing");
 	allStores.push(tnt);
 	var aunt = [];
 	aunt.push("Aunt Ellie's");
-	aunt.push("47.453613 -94.863358");
+	aunt.push("47.453613");
+	aunt.push("-94.863358");
 	aunt.push("Address");
 	aunt.push("Phone");
 	aunt.push("Email");
 	aunt.push("aunt.png");
+	aunt.push("clothing");
 	allStores.push(aunt);
 }
 
