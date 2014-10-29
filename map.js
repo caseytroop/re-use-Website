@@ -8,13 +8,6 @@ function initialize() {
 	map = new google.maps.Map(mapCanvas, mapOptions);
 	markers = [];
 	allMarkers = createAllMarkers();
-	setMarker(new google.maps.LatLng(47.472173, -94.881648), 'Goodwill');
-	setMarker(new google.maps.LatLng(47.471883, -94.881031), 'Twice but Nice');
-	setMarker(new google.maps.LatLng(47.470792, -94.882243), 'T k\'z closet');
-	setMarker(new google.maps.LatLng(47.469740, -94.881187), 'My best friend\'s closet');
-	setMarker(new google.maps.LatLng(47.475237, -94.880512), 'St. Philip\'s clothing depot');
-	setMarker(new google.maps.LatLng(47.483852, -94.927327), 'T-N-T Secondhand');
-	setMarker(new google.maps.LatLng(47.453613, -94.863358), 'Aunt Ellie\'s Attic');
 	
 	//kat's book nook llc
 	//book world
@@ -65,11 +58,11 @@ function getData(item)
 	clearMarkers();
 	//setMarker(new google.maps.LatLng(47.472173, -94.881648), 'Goodwill');
 	//connect to database and get all stores with item
-	for (int i = 0; i < allMarkers.length; i++)
+	for (var i = 0; i < allMarkers.length; i++)
 	{
 		if (allMarkers[i][7] == item)
 		{
-			setMarker(allMarkers[i][1], allMarkers[i][2], allMarkers[i][0]);
+			setMarker(new google.maps.LatLng(allMarkers[i][1], allMarkers[i][2]), allMarkers[i][0]);
 		}
 	}
 }
@@ -147,6 +140,17 @@ function createAllMarkers()
 	aunt.push("aunt.png");
 	aunt.push("clothing");
 	allStores.push(aunt);
+	var bensons = [];
+	bensons.push("Benson's Auto");
+	bensons.push("47.453113");
+	bensons.push("-94.863958");
+	bensons.push("Address");
+	bensons.push("Phone");
+	bensons.push("Email");
+	bensons.push("bensons.png");
+	bensons.push("cars");
+	allStores.push(bensons);
+	return allStores;
 }
 
 
