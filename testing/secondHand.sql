@@ -3,12 +3,12 @@ use greengrp;
 create table store
 	(
 	ID			int,
-	name		varchar(20),
-	goods		varchar(15),
+	name		varchar(35),
 	lat			double,
 	lon			double,
-	address		varchar(40),
+	address		varchar(50),
 	phone		varchar(15),
-	email		varchar(25),
-	img			varchar(20)
+	email		varchar(40),
+	img			varchar(20),
+	goods		varchar(20)
 	);
