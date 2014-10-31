@@ -1,8 +1,13 @@
-use hostname;
+use greengrp;
 
 create table store
 	(
 	ID			int,
-	Name		varchar(20)
+	name		varchar(20),
+	lat			double,
+	lon			double,
+	address		varchar(40),
+	phone		varchar(15),
+	email		varchar(25),
+	img			varchar(20)
 	);
-	
