@@ -1,0 +1,9 @@
+ID,name,lat,lon,address,phone,email ,img,goods
+1,Goodwill,47.472173,-94.881648,"407 Beltrami Ave NW, Bemidji, MN 56601",(218) 759-2147,,goodwill.jpeg,clothing
+2,Tk'z Closet,47.470792,-94.882243,"217 3rd St NW, Bemidji, MN 56601",(218) 444-8406,,tkz.jpeg,clothing
+3,Twice but Nice,47.471883,-94.881031,"411 Beltrami Ave NW, Bemidji, MN 56601",(218) 751-4241,,twice.jpeg,clothing
+4,My Best Friend's Closet,47.46974,-94.881187,"209 Beltrami Ave NW, Bemidji, MN 56601",(218) 308-2305,,mbfc.jpeg,clothing
+5,St. Philip's Clothing Depot,47.475237,-94.880512,"720 Beltrami Ave NW, Bemidji, MN 56601",(218) 444-3835,,phils.jpeg,clothing
+6,T-N-T Secondhand,47.483852,-94.927327,"1408 Adams Ave NW, Bemidji, MN 56601",(218) 751-2103,,tnt.jpeg,clothing
+7,Aunt Ellie's Attic,47.453613,-94.863358,"824 Washington Ave S, Bemidji, MN 56601",(218) 444-4334,,aunt.jpeg,clothing
+8,Benson's Auto,47.473653,-94.919421,"6941 Fairgrounds Rd NW , Bemidji, MN 56601",(218) 444-4414,,bensons.jpeg,cars
