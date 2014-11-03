@@ -10,21 +10,8 @@
 
 <body>
 	<?php
-		define("MYSQLUSER", "ejohannsen");
-		define("MYSQLPASS", "11027147");
-		define("HOSTNAME", "cs.bemidjistate.edu");
-		define("MYSQLDB", "greengrp");
-		echo MYSQLUSER;
-		$conn = @new mysqli(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
-		echo HOSTNAME;
-		if ($conn->connect_error) 
-		{
-			die('Connect Error: ' . $conn->connect_error);
-		} 
-		else 
-		{
-			echo 'Successful connection to MySQL <br />';
-		}
+		$file = fopen("makeshiftDB","r");
+		
 	?>
 </body>
 
