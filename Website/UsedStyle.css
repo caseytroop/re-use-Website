@@ -1,0 +1,196 @@
+@import url(http://fonts.googleapis.com/css?family=Prosto+One);
+@import url(http://fonts.googleapis.com/css?family=Belleza);
+	
+
+caption {font-size: 1em;
+         line-height: 150%}
+
+table {align: center;
+       border: 2px solid #389E02;
+       border-width: 80%;
+       border-spacing: 0;
+       font-family: "belleza";
+       box-shadow: 5px 5px 5px #000033;}
+
+\\table:nth-of-type(odd) {background: #5CD65C}
+	   
+		
+td {padding: 5px;
+    border: 1px solid #389E02;
+    text-align: center}
+	 
+th {backround-color: #FFFFFF;
+    padding: 5px;
+    border: 1px solid #389E02}
+	 
+
+
+body {background-color: #FFFFFF;
+      background-image: url("gbackground.gif");	
+      font-family: "Belleza", sans-serif;         
+      color: #666666;}
+                
+		
+h1 {background-color: #6B7D35;
+    background-image: url("h1logo.png");
+    background-size: 65px 60px;
+    background-repeat: no-repeat;
+    background-position: right center ;
+    font-family: "Prosto One";
+    color: #FFFFFF;
+    padding: 10px;
+    margin-bottom: 0;}
+
+h2 {color: #389E02;
+    font-family: "Prosto One", serif;
+    text-shadow: 1px 1px 1px #ccc;}
+
+h3 {color: #64733E;
+    font-family: "Prosto One", serif;}
+    
+h4 {color: #64733E;
+    font-family: "Prosto One", serif;}
+    
+h5 {color: #4C6609;
+    font-family: "Prosto One", serif;}
+
+h6 {color: #389E02;
+    font-family: "Prosto One", serif;}
+    
+sub {font-style: italic;}
+    
+
+
+nav {padding-left: 20px;
+     padding-top: 20px;
+     padding-right: 5px;
+     padding-bottom: 5px;
+     font-weight: bold;
+     float: right; width: 160px;}
+
+nav ul {list-style: none;
+        margin: 0px;
+        padding-left: 0px;
+        font-size: 1.2em}
+
+nav a {text-decoration: none}
+
+nav a:link {color: #000033;}
+
+nav a:visited {color: #344873;}
+
+nav a:hover {color:#FFFFFF}
+        
+dt {color: #000033;}
+
+ul {list-style-type: disc; }
+
+.title {background: #FFFFFF}
+
+.tabletitle {font-weight: bold;}
+
+.relative {clear: left;
+           position: fixed;
+           float: right;}
+.indent {text-indent: 50px}
+
+#wrapper {margin-left: auto;
+          margin-right: auto;
+          background-color: #B3D159;
+          box-shadow: 5px 5px 5px #000033;
+          width: 80%;}
+          
+#content {padding-top: 1px;
+          padding-right: 20px;
+          padding-bottom: 20px;
+          padding-left: 30px;
+          background-color: #FFFFFF;
+          margin-left: 190px;}
+
+#content ul {list-style-position: inside;}
+             
+             
+#content img {float: left;
+              padding-right: 20px;}
+
+#contact {padding-left: 30px;
+          font-size: 90%;
+          background-color: #FFFFFF;}
+
+#ed img {height: 175px;
+         width: 225px;
+         float: right;}
+
+#pdga img {height: 175px;
+           width: 175px;
+           float: right;}
+
+
+header 	{background-image: url("sunset.jpg");
+         background-repeat: no-repeat;
+         background-position: right}
+
+footer {padding: 20px 20px 20px 20px;
+        font-size: 75%;
+        font-family: "Belleza", "Times New Roman", serif;
+        margin-left: 190px;
+        background-color: #FFFFFF;}
+        
+header, hgroup, nav, foooter, figure, figcaption, aside, section, article {display: block;}
+
+#mobile {display: none}
+#desktop {display: inline}
+
+img {max-height: 100%;
+     max-width: 100%;
+     height: auto;}
+
+@media only screen and (max-width: 768px) {
+body {margin: 0;}
+#wrapper {min-width: 0;
+		  width: auto}
+#content {margin-left: 0}
+nav {float: none;
+	 width: auto;
+	 padding: 0;}
+nav ul {text-align: center}
+nav ul li {display: inline;
+		   padding-top: 0;
+		   padding-bottom: 0;
+		   padding-left: 0.75em;
+		   padding-right: 0.75em;}
+footer {margin-left: 0}
+										   }
+										   
+@media only screen and (max-width: 480px) {
+body {margin: 0}
+#wrapper {width: auto;
+		  min-width: 0;
+		  margin: 0;}
+#content {padding-top: 0.1em;
+		  padding-bottom: 0.1em;
+		  padding-left: 1em;
+		  padding-right: 1em;}
+h1 {margin:0;
+	font-size: 1.5em;
+	padding-left: 0.3em}
+nav ul {padding: 0;}
+nav ul li {display: block;
+		   margin: 0;
+		   border-width: 2px; 
+		   border-style: solid;
+		   border-color: #330000;}
+nav a {display: block;}
+#content img {float: none;
+			  padding: 0;
+			  margin: 0.1em;}
+#content ul {list-style-position: outside;}
+#mobile {display: inline;}
+#desktop {display: none;}
+											}
+    
+                                
+    
+
+
+
