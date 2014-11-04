@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <title>  Beltrami County Re-Stores </title>
+	  <link rel="stylesheet" href="style.css">
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+      #map_canvas {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map_canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(47.4736, -94.9903),
+          zoom: 11,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        setMarker(new google.maps.LatLng(47.472173, -94.881648), map); //goodwill
+        setMarker(new google.maps.LatLng(47.471883, -94.881031), map); //twice but nice
+        setMarker(new google.maps.LatLng(47.470792, -94.882243), map); //t k'z closet
+        setMarker(new google.maps.LatLng(47.469740, -94.881187), map); //my best friend's closet
+		setMarker(new google.maps.LatLng(47.475237, -94.880512), map); //st. philip's clothing depot
+		setMarker(new google.maps.LatLng(47.483852, -94.927327), map); //t-n-t secondhand
+		setMarker(new google.maps.LatLng(47.453613, -94.863358), map); //aunt ellie's attic
+		//kat's book nook llc
+		//book world
+		//roy's comics and games
+		//bill's used furniture and appliances
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+      function setMarker(latLon, map)
+      {
+		  var iconBase = 'https://maps.google.com/mapfiles/kml/paddle/';
+		  var marker = new google.maps.Marker({
+			  position: latLon,
+			  map: map,
+			  icon: iconBase + 'red-circle.png'
+		  });
+	  }
+    </script>
+  </head>
+  <body>
+	  
+    <div id="wrapper">
+	  <h1> Header 1 </h1>
+	   <nav>
+	    <ul>	
+	     <li><a href="index.html"> Home </a></li>
+	     <li><a href="page1.html"> page1 </a></li>
+	     <li><a href="page2.html"> page2 </a></li>
+	     <li><a href="page3.html"> page3 </a></li>
+	     <li><a href="page4.html"> page4 </a></li>
+	    </ul>
+	   </nav>
+	   <div id="map_canvas"></div>
+	 <div id="content">
+	  <h2> Header 2 </h2>
+	   <article>...<em>Emphasized Article Statement</em></article>
+	    <figure>
+	     <img src="course1.jpg" alt="Picture of a disc golf basket">
+		  <figcaption> Picture can go here </figcaption>
+	    </figure>
+        <p>
+	     Paragraph about website
+	    </p>
+	     <h4><strong>On This Site You Can:</strong></h4>
+	      <ul>
+	           <li> bullet1 </li>
+	           <li> bullet2 </li>
+	      </ul>
+	 <div id="contact">	
+	 </div>
+	  </div>
+	   <footer>
+	    Any Questions Just Email:
+	    <address>
+	     <h6><a href="beltrami.usedgoods@gmail.com"> beltrami.usedgoods@gmail.com</a></h6>
+        </address>
+       </footer>
+       
+       
+	 </div>
+  </body>
+</html>
+
