@@ -10,10 +10,6 @@ function initialize() {
 	allMarkers = createAllMarkers();
 	dirButton = document.getElementById('directions');
 	dirButton.disabled = true;
-	//kat's book nook llc
-	//book world
-	//roy's comics and games
-	//bill's used furniture and appliances
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 function setMarker(latLon, name, addr, phone, eml, img)
@@ -63,8 +59,34 @@ function getData(item)
 	clearMarkers();
 	map.setZoom(11);
 	map.setCenter(new google.maps.LatLng(47.475237, -94.880512));
+	//clear directions
+	//not sure if it is worth it
+	
 	//connect to database and get all stores with item
 	
+	//using text file php
+	<?php
+		$file = fopen("makeshiftDB.txt", "r");
+		$text = fread($file, filesize("makeshiftDB.txt"));
+		fclose($file);
+	?>
+	text = <?php echo $text; ?>;
+	var stores = db.split("\n");
+	var testList=[];
+	for(i=0;i<stores.length;i++)
+	{
+		attributes=stores[i].split(";");
+		stores[i]=attributes;
+	}		
+	var test="";
+	for(i=0;i<stores.length;i++)
+	{
+		for(j=0;j<stores[i].length;j++)
+		{
+			test=test+stores[i][j];
+		}
+		}
+	alert(test);
 	//could always try to connect to database and if there is no connection just call a
 	//different function that uses the static data
 	for (var i = 0; i < allMarkers.length; i++)
@@ -108,6 +130,12 @@ function getDirections()
 	{
 		alert("Location finder not available");
 	}
+}
+
+function search()
+{
+	searchItem = document.getElementById('search');
+	
 }
 
 function createAllMarkers()
@@ -173,6 +201,15 @@ function createAllMarkers()
 	tnt.push("tnt.jpeg");
 	tnt.push("clothing");
 	allStores.push(tnt);
+	var shands = [];
+	shands.push("Second Hand Splendor");
+	tnt.push("47.483852");
+	tnt.push("-94.92737");
+	tnt.push("301 3rd St. N.W. Bemidji, MN 56601");
+	tnt.push("(218) 209-3000");
+	tnt.push("Email");
+	tnt.push("shands.jpeg");
+	tnt.push("clothing");
 	var aunt = [];
 	aunt.push("Aunt Ellie's Attic");
 	aunt.push("47.453613");
