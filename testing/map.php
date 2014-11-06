@@ -22,7 +22,6 @@
 			}
 			map = new google.maps.Map(mapCanvas, mapOptions);
 			markers = [];
-			allMarkers = createAllMarkers();
 			dirButton = document.getElementById('directions');
 			dirButton.disabled = true;
 			//useText = true;
@@ -53,7 +52,7 @@
 			if (useText="<?php echo $useText; ?>")
 			{
 				console.log("Connection Error");
-				text = "<?php echo $text; ?>";
+				text = <?php echo $text; ?>;
 				var lines = text.split("*");
 				stores = [];
 				for(i=0;i<lines.length;i++)
@@ -115,11 +114,13 @@
 			//not sure if it is worth it
 			//connect to database and get all stores with item
 			
-			for (var i = 0; i < allMarkers.length; i++)
+			for (var i = 0; i < stores.length; i++)
 			{
-				if (allMarkers[i][7] == item)
+				if (stores[i][7] == item)
 				{
-					setMarker(new google.maps.LatLng(allMarkers[i][1], allMarkers[i][2]), allMarkers[i][0], allMarkers[i][3], allMarkers[i][4], allMarkers[i][5], allMarkers[i][6]);
+					setMarker(new google.maps.LatLng(stores[i][2], stores[i][3]), stores[i][1], stores[i][4], stores[i][5], stores[i][6], stores[i][7]);
+					var name = stores[i][1];
+					document.createElement('');
 				}
 			}
 		}
@@ -186,7 +187,7 @@
 			
 		}
 
-		function createAllMarkers()
+		/*function createAllMarkers()
 		{
 			var allStores = [];
 			var goodwill = [];
@@ -279,7 +280,7 @@
 			bensons.push("cars");
 			allStores.push(bensons);
 			return allStores;
-		}
+		}*/
     </script>
   </head>
   <body>
