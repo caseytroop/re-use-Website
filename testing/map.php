@@ -25,6 +25,43 @@
 			allMarkers = createAllMarkers();
 			dirButton = document.getElementById('directions');
 			dirButton.disabled = true;
+			//useText = true;
+			<?php
+				define("MYSQLUSER", "ctroop");
+				define("MYSQLPASS", "00356594");
+				define("HOSTNAME", "localhost");
+				define("MYSQLDB", "greengrp");
+				// Make connection to database
+				$connection = new mysqli(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
+				if ($connection->connect_error)
+				{
+					//console.log('Connect Error: ' . $connection->connect_error);
+					$file = fopen("makeshiftDB.txt", "r");
+					$text = fread($file, filesize("makeshiftDB.txt"));
+					fclose($file);
+					$useText = true;
+				}
+				else
+				{
+					//console.log("Successful connection");
+					$useText = true;
+					$file = fopen("makeshiftDB.txt", "r");
+					$text = fread($file, filesize("makeshiftDB.txt"));
+					fclose($file);
+				}
+			?>
+			if (useText="<?php echo $useText; ?>")
+			{
+				console.log("Connection Error");
+				text = "<?php echo $text; ?>";
+				var lines = text.split("*");
+				stores = [];
+				for(i=0;i<lines.length;i++)
+				{
+					attributes=lines[i].split(";");
+					stores.push(attributes);
+				}
+			}
 		}
 		google.maps.event.addDomListener(window, 'load', initialize);
 		function setMarker(latLon, name, addr, phone, eml, img)
@@ -76,34 +113,8 @@
 			map.setCenter(new google.maps.LatLng(47.475237, -94.880512));
 			//clear directions
 			//not sure if it is worth it
-			
 			//connect to database and get all stores with item
 			
-			//using text file php
-			<?php
-				$file = fopen("makeshiftDB.txt", "r");
-				$text = fread($file, filesize("makeshiftDB.txt"));
-				fclose($file);
-			?>
-			text = <?php echo $text; ?>;
-			var stores = db.split("\n");
-			var testList=[];
-			for(i=0;i<stores.length;i++)
-			{
-				attributes=stores[i].split(";");
-				stores[i]=attributes;
-			}		
-			var test="";
-			for(i=0;i<stores.length;i++)
-			{
-				for(j=0;j<stores[i].length;j++)
-				{
-					test=test+stores[i][j];
-				}
-				}
-			alert(test);
-			//could always try to connect to database and if there is no connection just call a
-			//different function that uses the static data
 			for (var i = 0; i < allMarkers.length; i++)
 			{
 				if (allMarkers[i][7] == item)
@@ -149,7 +160,29 @@
 
 		function search()
 		{
-			searchItem = document.getElementById('search');
+			clearMarkers();
+			map.setZoom(11);
+			map.setCenter(new google.maps.LatLng(47.475237, -94.880512));
+			searchItem = document.getElementById('search').value;
+			if(useText)
+			{
+				var resultStores = [];
+				for (var i=0; i < stores.length; i++)
+				{
+					for (var j=0; j < stores[i].length; j++)
+					{
+						var strLower = stores[i][j].toLowerCase();
+						if (strLower.search(searchItem.toLowerCase()) >= 0)
+						{
+							resultStores.push(stores[i]);
+						}
+					}
+				}
+				for (var i = 0; i < resultStores.length; i++)
+				{
+					setMarker(new google.maps.LatLng(resultStores[i][2], resultStores[i][3]), resultStores[i][1], resultStores[i][4], resultStores[i][5], resultStores[i][6], resultStores[i][7]);
+				}
+			}
 			
 		}
 
@@ -256,6 +289,7 @@
 	   <nav>
 	    <ul>	
 	     <li><a href="index.html"> Home </a></li>
+	     <li><input id="search" type="text"><input type="button" onclick="search()" value="Go"></li>
 	     <li><input type="button" value="Clothing" style="border:none;" onclick="getData('clothing')"></li>
 	     <li><input type="button" value="Used Cars" style="border:none;" onclick="getData('cars')"></li>
 	     <li><input type="button" value="Directions" style="border:none;" onclick="getDirections()" id="directions"></li>
